@@ -1,0 +1,45 @@
+---
+# This file has only replaced ufw module. All else same. Needs fixing
+- name:
+  block:
+    - name: Disable IPv6
+      lineinfile:
+        dest: /etc/default/ufw
+        regexp: "^IPV6"
+        line: "IPV6=no"
+        state: present
+
+    - name: Delete all existing rules (reset UFW)
+      ansible.posix.firewalld:
+        state: reset
+
+    - name: Default Allow Outgoing
+      ansible.posix.firewalld:
+        default: allow
+        direction: outgoing
+
+    - name: Default Deny Incoming
+      ansible.posix.firewalld:
+        default: deny
+        direction: incoming
+
+  always:
+    - name: Allow SSH
+      ansible.posix.firewalld:
+        rule: allow
+        direction: in
+        port: "{{ ssh_port }}"
+        proto: tcp
+        src: "{{ ssh_nets }}"
+        comment: "Allow SSH"
+      loop:
+        - 10.1.0.0/16
+        - 73.149.158.159/24
+      loop_control:
+        loop_var: ssh_nets
+
+    - name: Enable UFW and set logging
+      ansible.posix.firewalld:
+        state: "{{ ufw_state }}"
+        default: deny
+        logging: "{{ ufw_logging }}"

@@ -1,0 +1,4 @@
+---
+security_ssh_config_path: /etc/ssh/sshd_config
+security_sshd_name: sshd
+rhel_security_ssh_hostkeyalgos: ['ssh-ed25519', 'ssh-ed25519-cert-v01@openssh.com', 'sk-ssh-e    d25519@openssh.com', 'sk-ssh-ed25519-cert-v01@openssh.com', 'rsa-sha2-256', 'rsa-sha2-512'    , 'rsa-sha2-256-cert-v01@openssh.com', 'rsa-sha2-512-cert-v01@openssh.com'] 
