@@ -13,7 +13,7 @@
 
 - name: Set Login Banner
   ansible.builtin.copy:
-    src: ~/ansible/build/roles/harden/templates/issue.net
+    src: ~/ansible/roles/harden/templates/issue.net
     dest: /etc/issue.net
     owner: root
     group: root
