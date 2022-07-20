@@ -43,6 +43,8 @@
       line: "PasswordAuthentication {{ security_ssh_password_authentication }}"
     - regexp: "^PermitRootLogin"
       line: "PermitRootLogin {{ security_ssh_permit_root_login }}"
+    - regexp: "^AllowTcpForwarding"
+      line: "AllowTcpForwarding {{ security_ssh_tcp_fwd }}"
     - regexp: "^Port"
       line: "Port {{ security_ssh_port }}"
     - regexp: "^UseDNS"

@@ -10,6 +10,7 @@ security_ssh_permit_root_login: "no"
 security_ssh_usedns: "no"
 security_ssh_permit_empty_password: "no"
 security_ssh_challenge_response_auth: "no"
+security_ssh_tcp_fwd: "yes"
 security_ssh_gss_api_authentication: "no"
 security_ssh_x11_forwarding: "no"
 security_sshd_state: started
