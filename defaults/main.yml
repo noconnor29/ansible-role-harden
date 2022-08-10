@@ -4,8 +4,10 @@ security_ssh_ciphers: ['chacha20-poly1305@openssh.com', 'aes256-gcm@openssh.com'
 security_ssh_hostkeyalgos: ['ssh-ed25519', 'ssh-ed25519-cert-v01@openssh.com', 'rsa-sha2-256', 'rsa-sha2-512', 'rsa-sha2-256-cert-v01@openssh.com', 'rsa-sha2-512-cert-v01@openssh.com']
 # security_ssh_hostkeyalgos: ['ssh-ed25519', 'ssh-ed25519-cert-v01@openssh.com', 'sk-ssh-ed25519@openssh.com', 'sk-ssh-ed25519-cert-v01@openssh.com', 'rsa-sha2-256', 'rsa-sha2-512', 'rsa-sha2-256-cert-v01@openssh.com', 'rsa-sha2-512-cert-v01@openssh.com']
 security_ssh_macs: ['umac-128-etm@openssh.com', 'hmac-sha2-256-etm@openssh.com', 'hmac-sha2-512-etm@openssh.com']
+security_ssh_added_pubkey_types: ['sk-ecdsa-sha2-nistp256@openssh.com', 'sk-ssh-ed25519@openssh.com']
 security_ssh_kexalgos: ['curve25519-sha256', 'curve25519-sha256@libssh.org', 'diffie-hellman-group16-sha512', 'diffie-hellman-group18-sha512', 'diffie-hellman-group-exchange-sha256', 'diffie-hellman-group14-sha256']
 security_ssh_password_authentication: "no"
+security_ssh_pubkey_authentication: "yes"
 security_ssh_permit_root_login: "no"
 security_ssh_usedns: "no"
 security_ssh_permit_empty_password: "no"
